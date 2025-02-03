@@ -1,50 +1,41 @@
-# React + TypeScript + Vite
+# 📌 Gerenciador de Tarefas - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é o frontend de um **Gerenciador de Tarefas**, desenvolvido em **ReactJS** com **TailwindCSS** e **ShadCN** para estilização, além de **React Query** e **React Table** para gerenciamento de dados.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚛ **[ReactJS](https://react.dev/)** - Biblioteca para construção de interfaces.
+- 🎨 **[TailwindCSS](https://tailwindcss.com/)** - Framework utilitário para estilização.
+- 💅 **[ShadCN](https://ui.shadcn.com/)** - Componentes de UI acessíveis e personalizáveis.
+- 🔄 **[React Query](https://tanstack.com/query/latest)** - Gerenciamento de cache e estado assíncrono.
+- 📊 **[React Table](https://tanstack.com/table/latest)** - Construção de tabelas dinâmicas e eficientes.
 
-## Expanding the ESLint configuration
+## 📂 Funcionalidades
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+✅ Cadastro e login de usuários  
+✅ Recuperação de senha  
+✅ Gerenciamento de tarefas (criação, edição e exclusão)  
+✅ Listagem de tarefas com paginação e filtros  
 
-- Configure the top-level `parserOptions` property like this:
+## 📦 Configuração e execução do projeto
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### 1. ENVs
+
+A aplicação está integrada com o [backend](https://github.com/Rickpariz/todolist-backend). A URL do backend deve ser configurada na variável de ambiente VITE_BACKEND_API_URL.
+```sh
+VITE_BACKEND_API_URL=http://localhost:3000
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 2. Instalação
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Instale as dependências com seu gerenciador de pacotes preferido:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```sh
+yarn install 
+```
+
+### 3. Inicie o projeto
+
+```sh
+yarn dev 
 ```
