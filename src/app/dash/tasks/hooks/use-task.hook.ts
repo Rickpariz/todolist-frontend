@@ -63,8 +63,12 @@ export const useTask = ({ task }: Props) => {
     },
     onError: (error) => {
       const toastParams = {
-        title: "Erro ao criar tarefa",
-        description: "Ocorreu um erro ao criar a tarefa, tente novamente",
+        title: task?.id
+          ? `Erro ao atualizar ${task.title}`
+          : "Erro ao criar tarefa",
+        description: task?.id
+          ? `Ocorreu um erro ao atualizar a tarefa, tente novamente`
+          : "Ocorreu um erro ao criar a tarefa, tente novamente",
         variant: "destructive" as const,
       };
 
